@@ -9,7 +9,7 @@ Este proyecto es el frontend de la aplicación Tienda, desarrollado con React y 
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu_usuario/tu_repo.git
+git clone [https://github.com/tu_usuario/tu_repo.git](https://github.com/hanz-saenz/ti)
 cd frontend
 ```
 
