@@ -4,6 +4,8 @@ import Registro from './Componentes/Login/Registro';
 import Login from './Componentes/Login/Login';
 import Dashboard from './Componentes/Dashboard/Dashboard';
 import ValidarAccesoRoute from './Componentes/Dashboard/ValidadAccesoRoute';
+import Perfil from './Componentes/Usuario/Perfil';
+import Productos from './Componentes/Productos/Productos';
 function App() {
   return (
 
@@ -13,6 +15,18 @@ function App() {
             <ValidarAccesoRoute>
               <Dashboard />
             </ValidarAccesoRoute>
+          } 
+        />
+        <Route path="/perfil" element={
+            <ValidarAccesoRoute>
+              <Perfil />
+            </ValidarAccesoRoute>
+          } 
+        />
+        <Route path="/productos" element={
+            // <ValidarAccesoRoute>
+              <Productos />
+            // </ValidarAccesoRoute>
           } 
         />
         <Route path="/login" element={<Login />} />

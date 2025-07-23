@@ -17,6 +17,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SchoolIcon from "@mui/icons-material/School";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
+import { logoutUsuario } from "../../Servicios/Login/loginServicio";
 
 const NavbarWithDrawer = () => {
   const [open, setOpen] = useState(false);
@@ -29,6 +30,11 @@ const NavbarWithDrawer = () => {
   const handleNavigation = (path) => {
     navigate(path);
     setOpen(false);
+  };
+
+  const handleLogout = () => {
+    logoutUsuario();
+    // navigate("/login");
   };
 
   return (
@@ -59,7 +65,7 @@ const NavbarWithDrawer = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            <ListItem button onClick={() => handleNavigation("/")}>
+            <ListItem button onClick={() => handleNavigation("/dashboard")}>
               <ListItemIcon><HomeIcon /></ListItemIcon>
               <ListItemText primary="Inicio" />
             </ListItem>
@@ -67,11 +73,11 @@ const NavbarWithDrawer = () => {
               <ListItemIcon><AccountCircleIcon /></ListItemIcon>
               <ListItemText primary="Perfil" />
             </ListItem>
-            <ListItem button onClick={() => handleNavigation("/cursos")}>
+            <ListItem button onClick={() => handleNavigation("/productos")}>
               <ListItemIcon><SchoolIcon /></ListItemIcon>
-              <ListItemText primary="Cursos" />
+              <ListItemText primary="Productos" />
             </ListItem>
-            <ListItem button onClick={() => handleNavigation("/logout")}>
+            <ListItem button onClick={() => handleLogout()}>
               <ListItemIcon><LogoutIcon /></ListItemIcon>
               <ListItemText primary="Salir" />
             </ListItem>

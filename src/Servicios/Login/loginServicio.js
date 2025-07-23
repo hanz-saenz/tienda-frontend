@@ -1,7 +1,16 @@
 import axios from "axios";
+const getCookie = (name) => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+};
 
+const csrftoken = getCookie('csrftoken');
 const api = axios.create({
     baseURL: "http://localhost:8000/es",
+    headers: {
+        'X-CSRFToken': csrftoken
+    },
     withCredentials: true, // Cambiado a true para permitir cookies
 });
 
@@ -38,3 +47,15 @@ export const loginUsuario = async (username, password) => {
     throw error;
   }
 };
+
+
+export const logoutUsuario = async () =>{
+
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+
+    document.cookie = "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "refresh_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    return window.location.href = "/login";
+}
