@@ -77,6 +77,10 @@ const NavbarWithDrawer = () => {
               <ListItemIcon><SchoolIcon /></ListItemIcon>
               <ListItemText primary="Productos" />
             </ListItem>
+            <ListItem button onClick={() => handleNavigation("/carrito")}>
+              <ListItemIcon><SchoolIcon /></ListItemIcon>
+              <ListItemText primary="Carrito" />
+            </ListItem>
             <ListItem button onClick={() => handleLogout()}>
               <ListItemIcon><LogoutIcon /></ListItemIcon>
               <ListItemText primary="Salir" />

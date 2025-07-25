@@ -6,11 +6,18 @@ import Dashboard from './Componentes/Dashboard/Dashboard';
 import ValidarAccesoRoute from './Componentes/Dashboard/ValidadAccesoRoute';
 import Perfil from './Componentes/Usuario/Perfil';
 import Productos from './Componentes/Productos/Productos';
+import Index from './Componentes/Dashboard/Index';
+import DetalleProducto from './Componentes/Dashboard/Productos/DetalleProducto';
+import Carrito from './Componentes/Dashboard/Productos/Carrito';
+
 function App() {
   return (
 
     <Router>
       <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/carrito" element={<Carrito />} />
+        <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
         <Route path="/dashboard" element={
             <ValidarAccesoRoute>
               <Dashboard />

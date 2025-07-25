@@ -183,3 +183,101 @@ export const obtenerDetalleProducto = async (id) => {
         throw error;
     }
 };
+
+
+// DATOS SIN AUTENTICACION 
+
+
+export const listarProductosAny = async () => {
+    try {
+        const response = await axios.get('http://localhost:8000/es/productos/api/productos/',
+            {
+                headers: {
+                    'X-CSRFToken': csrf_tokrn,
+                },
+                withCredentials: true // permite el envío/recepción de cookies
+            }   
+        );
+        // alert("Productos obtenidos: "+ response.data.data[0].nombre);
+        // console.log('response.data', response.data);
+        return response.data;
+    } catch (error) {
+        console.error("Error al obtener los productos:", error);
+        throw error;
+    }
+};
+
+export const listarProductosDetalle = async (id_producto) => {
+    try {
+        const response = await axios.get(`http://localhost:8000/es/productos/api/productos/${id_producto}`,
+            {
+                headers: {
+                    'X-CSRFToken': csrf_tokrn,
+                },
+                withCredentials: true // permite el envío/recepción de cookies
+            }   
+        );
+        // alert("Productos obtenidos: "+ response.data.data[0].nombre);
+        console.log('response.data', response.data);
+        return response.data;
+    } catch (error) {
+        console.error("Error al obtener los productos:", error);
+        throw error;
+    }
+};
+
+
+export const listarCategoria = async () => {
+    try {
+        const response = await axios.get('http://localhost:8000/es/productos/api/categorias/',
+            {
+                headers: {
+                    'X-CSRFToken': csrf_tokrn,
+                },
+                withCredentials: true // permite el envío/recepción de cookies
+            }   
+        );
+console.log('response.data', response.data);
+        return response.data;
+    } catch (error) {
+        console.error("Error al obtener los productos:", error);
+        throw error;
+    }
+};
+
+export const listarProveedor = async () => {
+    try {
+        const response = await axios.get('http://localhost:8000/es/productos/api/productos/proveedor/',
+            {
+                headers: {
+                    'X-CSRFToken': csrf_tokrn,
+                },
+                withCredentials: true // permite el envío/recepción de cookies
+            }   
+        );
+        // alert("Productos obtenidos: "+ response.data.data[0].nombre);
+        return response.data;
+    } catch (error) {
+        console.error("Error al obtener los productos:", error);
+        throw error;
+    }
+};
+
+
+export const listarMarca= async () => {
+    try {
+        const response = await axios.get('http://localhost:8000/es/productos/api/productos/marca/',
+            {
+                headers: {
+                    'X-CSRFToken': csrf_tokrn,
+                },
+                withCredentials: true // permite el envío/recepción de cookies
+            }   
+        );
+        // alert("Productos obtenidos: "+ response.data.data[0].nombre);
+        return response.data;
+    } catch (error) {
+        console.error("Error al obtener los productos:", error);
+        throw error;
+    }
+};
