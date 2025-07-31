@@ -7,7 +7,7 @@ const getCookie = (name) => {
 
 const csrftoken = getCookie('csrftoken');
 const api = axios.create({
-    baseURL: "http://localhost:8000/es",
+    baseURL: "https://tiendaonline-1gvm.onrender.com/es",
     headers: {
         'X-CSRFToken': csrftoken
     },

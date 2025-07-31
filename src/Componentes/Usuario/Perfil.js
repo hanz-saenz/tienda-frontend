@@ -58,7 +58,7 @@ const Perfil = () => {
                 <>
                   {perfil.foto_perfil && (
                     <Avatar
-                      src={`http://localhost:8000${perfil.foto_perfil}`}
+                      src={`https://tiendaonline-1gvm.onrender.com${perfil.foto_perfil}`}
                       sx={{ width: 100, height: 100 }}
                     />
                   )}

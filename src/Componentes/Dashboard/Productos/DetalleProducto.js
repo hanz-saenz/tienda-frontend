@@ -79,7 +79,7 @@ const DetalleProducto = () => {
                                             ? imagenesOrdenadas.map((imagen, idx) => (
                                                 <img
                                                     key={idx}
-                                                    src={`http://localhost:8000${imagen.imagen}`}
+                                                    src={`https://tiendaonline-1gvm.onrender.com${imagen.imagen}`}
                                                     alt={producto.nombre}
                                                     style={{
                                                         width: 300,

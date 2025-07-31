@@ -5,7 +5,8 @@ const accessToken = localStorage.getItem("access_token");
 
 console.log(accessToken);
 const api = axios.create({
-    baseURL: "http://localhost:8000/es",
+    // baseURL: "https://tiendaonline-1gvm.onrender.com/es",
+    baseURL: "https://tiendaonline-1gvm.onrender.com",
     headers: {
         'Authorization': `Bearer ${accessToken}` // corregido el typo
     },
@@ -14,7 +15,7 @@ const api = axios.create({
 
 
 export const perfilUsuario = async () => {
-    const response = await axios.get('http://localhost:8000/es/usuario/api/perfil/',
+    const response = await axios.get('https://tiendaonline-1gvm.onrender.com/es/usuario/api/perfil/',
         {
             headers: {
                 'Authorization': `Bearer ${accessToken}` // corregido el typo
@@ -43,7 +44,7 @@ export const perfilUsuario2 = async () => {
 export const actualizarPerfil = async (data) => {
 
     try {
-        const response = await axios.put('http://localhost:8000/es/usuario/api/perfil/', data,
+        const response = await axios.put('https://tiendaonline-1gvm.onrender.com/es/usuario/api/perfil/', data,
             {
             headers: {
                 'Authorization': `Bearer ${accessToken}`, // corregido el typo

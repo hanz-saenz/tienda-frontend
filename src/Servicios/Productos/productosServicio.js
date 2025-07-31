@@ -13,7 +13,7 @@ const csrf_tokrn = getCookie('csrftoken');
 
 console.log(accessToken);
 const api = axios.create({
-    baseURL: "http://localhost:8000/es",
+    baseURL: "https://tiendaonline-1gvm.onrender.com/es",
     headers: {
         'Authorization': `Bearer ${accessToken}`, // corregido el typo
                     'X-CSRFToken': csrf_tokrn,
@@ -24,7 +24,7 @@ const api = axios.create({
 
 export const listarProductos = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/es/productos/api/productos/lista',
+        const response = await axios.get('https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/lista',
             {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`, // corregido el typo
@@ -44,7 +44,7 @@ export const listarProductos = async () => {
 export const crearProducto = async (data) => {
     const csrf_tokrn = getCookie('csrftoken');
     try {
-        const response = await axios.post('http://localhost:8000/es/productos/api/productos/lista', 
+        const response = await axios.post('https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/lista', 
             data,
             {
                 
@@ -65,7 +65,7 @@ export const crearProducto = async (data) => {
 
 export const listarCategorias = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/es/productos/api/productos/categorias',
+        const response = await axios.get('https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/categorias',
             {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`, // corregido el typo
@@ -84,7 +84,7 @@ export const listarCategorias = async () => {
 
 export const listarProveedores = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/es/productos/api/productos/proveedores',
+        const response = await axios.get('https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/proveedores',
             {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`, // corregido el typo
@@ -104,7 +104,7 @@ export const listarProveedores = async () => {
 
 export const listarMarcas= async () => {
     try {
-        const response = await axios.get('http://localhost:8000/es/productos/api/productos/marcas',
+        const response = await axios.get('https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/marcas',
             {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`, // corregido el typo
@@ -125,7 +125,7 @@ export const listarMarcas= async () => {
 export const actualizarProducto = async (id, data) => {
     const csrf_tokrn = getCookie('csrftoken');
     try {
-        const response = await axios.put(`http://localhost:8000/es/productos/api/productos/lista/${id}/`, 
+        const response = await axios.put(`https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/lista/${id}/`, 
             data,
             {
                 
@@ -147,7 +147,7 @@ export const actualizarProducto = async (id, data) => {
 export const eliminarProducto = async (id) => {
     const csrf_tokrn = getCookie('csrftoken');
     try {
-        const response = await axios.delete(`http://localhost:8000/es/productos/api/productos/lista/${id}/`, 
+        const response = await axios.delete(`https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/lista/${id}/`, 
             {
 
                 headers: {
@@ -167,7 +167,7 @@ export const eliminarProducto = async (id) => {
 
 export const obtenerDetalleProducto = async (id) => {
     try {
-        const response = await axios.get(`http://localhost:8000/es/productos/api/productos/lista/${id}`,
+        const response = await axios.get(`https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/lista/${id}`,
             {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`, // corregido el typo
@@ -190,7 +190,7 @@ export const obtenerDetalleProducto = async (id) => {
 
 export const listarProductosAny = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/es/productos/api/productos/',
+        const response = await axios.get('https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/',
             {
                 headers: {
                     'X-CSRFToken': csrf_tokrn,
@@ -209,7 +209,7 @@ export const listarProductosAny = async () => {
 
 export const listarProductosDetalle = async (id_producto) => {
     try {
-        const response = await axios.get(`http://localhost:8000/es/productos/api/productos/${id_producto}`,
+        const response = await axios.get(`https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/${id_producto}`,
             {
                 headers: {
                     'X-CSRFToken': csrf_tokrn,
@@ -229,7 +229,7 @@ export const listarProductosDetalle = async (id_producto) => {
 
 export const listarCategoria = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/es/productos/api/categorias/',
+        const response = await axios.get('https://tiendaonline-1gvm.onrender.com/es/productos/api/categorias/',
             {
                 headers: {
                     'X-CSRFToken': csrf_tokrn,
@@ -247,7 +247,7 @@ console.log('response.data', response.data);
 
 export const listarProveedor = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/es/productos/api/productos/proveedor/',
+        const response = await axios.get('https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/proveedor/',
             {
                 headers: {
                     'X-CSRFToken': csrf_tokrn,
@@ -266,7 +266,7 @@ export const listarProveedor = async () => {
 
 export const listarMarca= async () => {
     try {
-        const response = await axios.get('http://localhost:8000/es/productos/api/productos/marca/',
+        const response = await axios.get('https://tiendaonline-1gvm.onrender.com/es/productos/api/productos/marca/',
             {
                 headers: {
                     'X-CSRFToken': csrf_tokrn,

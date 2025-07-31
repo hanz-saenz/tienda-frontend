@@ -141,7 +141,7 @@ const Index = () => {
                                     component="img"
                                     image={
                                         producto.imagenes.find((imagen) => imagen.es_principal) 
-                                        ? `http://localhost:8000${producto.imagenes.find((imagen) => imagen.es_principal).imagen}`
+                                        ? `https://tiendaonline-1gvm.onrender.com${producto.imagenes.find((imagen) => imagen.es_principal).imagen}`
                                         : "https://hapuricellisa.com.ar/plugins/productos/producto-sin-imagen.png"
                                     }
                                     alt={producto.nombre}
